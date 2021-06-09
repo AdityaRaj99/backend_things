@@ -2,6 +2,25 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/user.js';
 import mongoose from 'mongoose';
+import tutorialRoutes from "./routes/tutorial";
+import pgdb from "./model/index";
+pgdb.sequelize.sync({force:true})
+    .then(
+        (result)=>{
+            console.log(result)
+        }
+    )
+    .catch(
+        (err)=>{
+            console.log(err)
+        }
+    )
+
+
+
+
+
+
 
 const dbURL = "mongodb+srv://acc1:acc1@cluster0.epli3.mongodb.net/randomTutorial?retryWrites=true&w=majority"
 
@@ -26,7 +45,7 @@ app.get("/" ,(req, res)=>{
     res.send("Welcome to the Users APIs")
 });
 app.use("/user", userRoutes)  //user routes to userRoutes
-
+app.use("tutorial",tutorialRoutes)
 // app.listen(PORT,()=>{
 //     console.log('Server is running');
 // })
