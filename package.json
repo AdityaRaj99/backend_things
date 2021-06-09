@@ -1,0 +1,17 @@
+{
+  "name": "expressApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "mongoose": "^5.12.10",
+    "uuid": "^8.3.2"
+  }
+}
