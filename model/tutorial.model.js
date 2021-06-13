@@ -1,5 +1,5 @@
 const tutorial =(sequelize,Sequalize)=>{
-    const Tutorial=sequalize.define("tutorials",{
+    const Tutorial=sequelize.define("tutorials",{
         title:{
             type:Sequalize.STRING
         },

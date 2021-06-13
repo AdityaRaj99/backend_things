@@ -1,8 +1,8 @@
-import pgconfig from '../config/db.postgres.config';
+import pgconfig from '../config/db.postgres.config.js';
 import Sequelize from 'sequelize';
-import tutorial from './tutorial.model';
+import tutorial from './tutorial.model.js';
 
-const sequelize = new Sequelize(pgconfig.DB, pgconfig.USER, pgconfig.PASSWORD,{
+const sequelize = new Sequelize(pgconfig.DB, pgconfig.USERNAME, pgconfig.PASSWORD,{
     host: pgconfig.HOST,
     dialect: pgconfig.DIALECT,
     port: pgconfig.PORT,
@@ -16,11 +16,11 @@ const sequelize = new Sequelize(pgconfig.DB, pgconfig.USER, pgconfig.PASSWORD,{
 });
 
 const db={
-    Sequalize:Sequelize,
+    Sequelize:Sequelize,
     sequelize:sequelize,
     //sequelize - used to make schema inside the tutorial function
     //Sequelize- used for defining the standard data types from the 'sequelize' module
-    tutorials:tutorial(sequelize,Sequalize)
+    tutorials:tutorial(sequelize,Sequelize)
 }
 
 export default db;
